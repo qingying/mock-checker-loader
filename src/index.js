@@ -1,8 +1,8 @@
 var esprima = require("esprima");
 var estraverse = require("estraverse");
 
-function addMockTip(names) {
-    var addTipFun = function(names) {
+function addMockTip(names, hideTipTime = 3) {
+    var addTipFun = function(names, hideTipTime) {
         window.mockTipNames = window.mockTipNames || {};
         names.map(function(name) {
             if (!window.mockTipNames[name]) {
@@ -37,7 +37,7 @@ function addMockTip(names) {
         mockTipEl.textContent = textContent;
         setTimeout(function() {
             mockTipEl.style.transform = 'scale(0)';
-        }, 3000)
+        }, hideTipTime * 1000)
     }
     var namesParam = '';
     var nameLen = names.length;
@@ -47,7 +47,7 @@ function addMockTip(names) {
             namesParam + ','
         }
     })
-    return '(' + addTipFun.toString() +')([' + namesParam + '])'
+    return '(' + addTipFun.toString() +')([' + namesParam + '], ' + hideTipTime + ')'
 }
 
 function getQueryParam(query = '?') {
@@ -94,7 +94,7 @@ module.exports = function(source) {
         }
     })
     if (names.length) {
-        mockTip = addMockTip(names);
+        mockTip = addMockTip(names, query.hideTipTime);
         // console.log(mockTip)
     }
     return source + mockTip;

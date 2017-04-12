@@ -15,7 +15,7 @@ function addMockTip(names) {
         if (!mockTipEl) {
             mockTipEl = document.createElement('div');
             mockTipEl.className = 'mock-tip-wrap';
-            mockTipEl.style.cssText = ['position: fixed', 'left: 10%', 'top: 50px', 'width: 80%', 'height: auto', 'background-color: #fff0c3', 'color: #f00', 'transition: transform 3s ease-out', 'transform: scale(1)'].join(';');
+            mockTipEl.style.cssText = ['position: fixed', 'left: 10%', 'top: 50px', 'width: 80%', 'height: auto', 'background-color: #fff0c3', 'color: #f00', 'transition: transform 3s ease-out', 'transform: scale(1)', 'z-index: 100000'].join(';');
             document.body.appendChild(mockTipEl);
         }
         mockTipEl.style.transform = 'scale(1)';
