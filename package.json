@@ -1,6 +1,6 @@
 {
   "name": "mock-checker-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "webpack loader,check mock data before publish app and give a tip on the page",
   "main": "./build/index.js",
   "watch": {
@@ -13,7 +13,8 @@
   "scripts": {
     "build": "babel src/ --out-dir build/",
     "test": "npm run build && mocha ./test/test.js",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "pub": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
