@@ -42,8 +42,7 @@ describe('mock checker test', function() {
     it('has mock data checker', function() {
         var source = 'mockTest';
         var output = mockChecker(source);
-        var result = 'mockTest' + addMockTip(['mockTest']);
-        assert.equal(output, result);
+        assert.notEqual(output, source);
     })
     it('no mock data checker', function() {
         var source = 'otherTest';
