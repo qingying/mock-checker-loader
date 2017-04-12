@@ -21,7 +21,7 @@ function addMockTip(names) {
                 'height: auto',
                 'background-color: #fff0c3',
                 'color: #f00',
-                'transition: transform .5s ease-out',
+                'transition: transform 3s ease-out',
                 'transform: scale(1)'
             ].join(';');
             document.body.appendChild(mockTipEl);

@@ -1,6 +1,6 @@
 {
   "name": "mock-checker-loader",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "webpack loader,check mock data before publish app and give a tip on the page",
   "main": "./build/index.js",
   "watch": {
@@ -13,11 +13,7 @@
   "scripts": {
     "build": "babel src/ --out-dir build/",
     "test": "npm run build && mocha ./test/test.js",
-    "watch": "npm-watch",
-    "publish": "npm run build && npm publish"
-  },
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
