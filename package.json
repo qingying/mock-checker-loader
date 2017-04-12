@@ -1,6 +1,6 @@
 {
   "name": "mock-checker-loader",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "webpack loader,check mock data before publish app and give a tip on the page",
   "main": "./build/index.js",
   "watch": {
