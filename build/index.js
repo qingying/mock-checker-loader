@@ -55,7 +55,12 @@ function getQueryParam() {
     return params;
 }
 module.exports = function (source) {
-    var query = getQueryParam(this && this.query);
+    var query;
+    if (this && this.query) {
+        query = getQueryParam(this.query);
+    } else {
+        query = {};
+    }
     var ast = esprima.parse(source, { sourceType: 'script', jsx: true });
     var nodeTypes = {};
     var mockTip = '';
@@ -81,7 +86,6 @@ module.exports = function (source) {
             }
         }
     });
-    console.log(names);
     if (names.length) {
         mockTip = addMockTip(names);
         // console.log(mockTip)

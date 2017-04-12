@@ -22,7 +22,8 @@ function addMockTip(names) {
                 'background-color: #fff0c3',
                 'color: #f00',
                 'transition: transform 3s ease-out',
-                'transform: scale(1)'
+                'transform: scale(1)',
+                'z-index: 100000'
             ].join(';');
             document.body.appendChild(mockTipEl);
         }
